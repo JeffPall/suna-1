@@ -7,8 +7,8 @@ import { useAvailableModels } from '@/hooks/react-query/subscriptions/use-model'
 
 export const STORAGE_KEY_MODEL = 'suna-preferred-model-v3';
 export const STORAGE_KEY_CUSTOM_MODELS = 'customModels';
-export const DEFAULT_PREMIUM_MODEL_ID = 'claude-sonnet-4';
-export const DEFAULT_FREE_MODEL_ID = 'moonshotai/kimi-k2';
+export const DEFAULT_PREMIUM_MODEL_ID = 'openrouter/deepseek/deepseek-r1-0528:free';
+export const DEFAULT_FREE_MODEL_ID = 'openrouter/deepseek/deepseek-r1-0528:free';
 
 export const testLocalStorage = (): boolean => {
   if (typeof window === 'undefined') return false;
@@ -43,64 +43,15 @@ export interface CustomModel {
 }
 
 export const MODELS = {
-  'claude-sonnet-4': { 
-    tier: 'premium',
-    priority: 100, 
-    recommended: true,
-    lowQuality: false
-  },
-  'gpt-5': { 
-    tier: 'premium', 
-    priority: 99,
-    recommended: false,
-    lowQuality: false
-  },
-  'google/gemini-2.5-pro': { 
-    tier: 'premium', 
-    priority: 96,
-    recommended: false,
-    lowQuality: false
-  },
-  'grok-4': { 
-    tier: 'premium', 
-    priority: 94,
-    recommended: false,
-    lowQuality: false
-  },
-  'sonnet-3.7': { 
-    tier: 'premium', 
-    priority: 93, 
-    recommended: false,
-    lowQuality: false
-  },
-  'sonnet-3.5': { 
-    tier: 'premium', 
-    priority: 90,
-    recommended: false,
-    lowQuality: false
-  },
-
-  'moonshotai/kimi-k2': { 
-    tier: 'free', 
+  'openrouter/deepseek/deepseek-r1-0528:free': {
+    tier: 'free',
     priority: 100,
     recommended: true,
     lowQuality: false
   },
-  'deepseek': { 
-    tier: 'free', 
-    priority: 95,
-    recommended: false,
-    lowQuality: false
-  },
-  'qwen3': { 
-    tier: 'free', 
+  'openrouter/qwen/qwen3-235b-a22b-thinking-2507': {
+    tier: 'free',
     priority: 90,
-    recommended: false,
-    lowQuality: false
-  },
-  'gpt-5-mini': { 
-    tier: 'free', 
-    priority: 85,
     recommended: false,
     lowQuality: false
   },
